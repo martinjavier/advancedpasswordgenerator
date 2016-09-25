@@ -14,8 +14,9 @@ import javax.swing.ImageIcon;
 public class MainFrame extends javax.swing.JFrame {
 
     /**
-     * (c) 2016 Martín Javier Del Percio
-     * martinjavierd@gmail.com
+     * @author Martín Javier Del Percio
+     * (c) 2016 Martín Javier Del Percio <martinjavierd@gmail.com>
+     * GNU General Public License, version 3 (GPL-3.0)
      * Buenos Aires, Argentina
      */
     
