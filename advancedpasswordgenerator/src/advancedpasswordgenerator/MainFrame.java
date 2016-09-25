@@ -45,7 +45,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnCopiar = new javax.swing.JButton();
         btnGenerar = new javax.swing.JButton();
         panelLong = new javax.swing.JPanel();
-        cmbLongitud = new javax.swing.JComboBox<>();
+        sldLongitud = new javax.swing.JSlider();
         panelGC = new javax.swing.JPanel();
         chkboxSimb = new javax.swing.JCheckBox();
         chkboxNume = new javax.swing.JCheckBox();
@@ -87,25 +87,29 @@ public class MainFrame extends javax.swing.JFrame {
 
         panelLong.setBorder(javax.swing.BorderFactory.createTitledBorder("Longitud"));
 
-        cmbLongitud.setBackground(new java.awt.Color(204, 255, 255));
-        cmbLongitud.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cmbLongitud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8", "16", "24", "32", "40", "48", "56", "64" }));
-        cmbLongitud.setToolTipText("Longitud de la Contraseña");
+        sldLongitud.setMajorTickSpacing(8);
+        sldLongitud.setMaximum(64);
+        sldLongitud.setMinimum(8);
+        sldLongitud.setMinorTickSpacing(8);
+        sldLongitud.setPaintLabels(true);
+        sldLongitud.setPaintTicks(true);
+        sldLongitud.setToolTipText("");
+        sldLongitud.setValue(8);
 
         javax.swing.GroupLayout panelLongLayout = new javax.swing.GroupLayout(panelLong);
         panelLong.setLayout(panelLongLayout);
         panelLongLayout.setHorizontalGroup(
             panelLongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLongLayout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(cmbLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+            .addGroup(panelLongLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(sldLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelLongLayout.setVerticalGroup(
             panelLongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLongLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cmbLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(sldLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -133,13 +137,14 @@ public class MainFrame extends javax.swing.JFrame {
         panelGCLayout.setHorizontalGroup(
             panelGCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGCLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(panelGCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(chkboxMayu)
                     .addComponent(chkboxMinu)
                     .addComponent(chkboxTodo)
                     .addComponent(chkboxNume)
                     .addComponent(chkboxSimb))
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGCLayout.setVerticalGroup(
             panelGCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +163,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
 
         btn_sp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/advancedpasswordgenerator/Spain_icon.png"))); // NOI18N
-		btn_sp.setToolTipText("Español");
+        btn_sp.setToolTipText("Español");
         btn_sp.setPreferredSize(new java.awt.Dimension(32, 32));
         btn_sp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,24 +182,22 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_sp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_en, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(235, 235, 235))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCopiar, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtResultado, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnGenerar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(panelGC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_sp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_en, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnCopiar, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+                        .addComponent(txtResultado)
+                        .addComponent(btnGenerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(panelGC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(18, 18, 18)
                             .addComponent(panelLong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +210,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelGC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelLong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(btnGenerar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,7 +219,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        setSize(new java.awt.Dimension(567, 436));
+        setSize(new java.awt.Dimension(534, 385));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -260,18 +263,8 @@ public class MainFrame extends javax.swing.JFrame {
                 int cadena;
                 int cantidad;
                 int posicion;
-                
-                /*
-                Integer[] numbers = {8,16,32,40,48,56,64};
-                Integer chosenNumber = (Integer)cmbLongitud.getSelectedItem();
-                System.out.println("Chosen Number: " + chosenNumber);
-                */
-                
-                String selectedValue = (String) cmbLongitud.getSelectedItem();
-                
-                Integer intLong = Integer.valueOf(selectedValue);
-                
-               int maximo = intLong;
+
+               int maximo = sldLongitud.getValue();
                 
                 while ( clave.length() < maximo)
                 {    
@@ -333,7 +326,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnGenerar.setText("GENERAR");
         txtResultado.setText("(vacio)");
         btnCopiar.setText("copiar la contraseña");
-        //lblLong.setText("Valor");
+        this.setTitle("Generador Avanzado de Contraseñas");
         panelLong.setBorder(BorderFactory.createTitledBorder("Longitud"));
         panelGC.setBorder(BorderFactory.createTitledBorder("Grupo de Caracteres"));
         
@@ -349,7 +342,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnGenerar.setText("GENERATE");
         txtResultado.setText("(empty)");
         btnCopiar.setText("copy the password");
-        //lblLong.setText("Value");
+        this.setTitle("Advanced Password Generator");
         panelLong.setBorder(BorderFactory.createTitledBorder("Length"));
         panelGC.setBorder(BorderFactory.createTitledBorder("Character Set"));
         
@@ -401,9 +394,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkboxNume;
     private javax.swing.JCheckBox chkboxSimb;
     private javax.swing.JCheckBox chkboxTodo;
-    private javax.swing.JComboBox<String> cmbLongitud;
     private javax.swing.JPanel panelGC;
     private javax.swing.JPanel panelLong;
+    private javax.swing.JSlider sldLongitud;
     private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 
