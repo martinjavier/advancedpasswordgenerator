@@ -157,8 +157,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        btn_sp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpasswordgen/Spain_icon.png"))); // NOI18N
-        btn_sp.setToolTipText("Español");
+        btn_sp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/advancedpasswordgenerator/Spain_icon.png"))); // NOI18N
+		btn_sp.setToolTipText("Español");
         btn_sp.setPreferredSize(new java.awt.Dimension(32, 32));
         btn_sp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +166,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        btn_en.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpasswordgen/UK_icon.png"))); // NOI18N
+        btn_en.setIcon(new javax.swing.ImageIcon(getClass().getResource("/advancedpasswordgenerator/UK_icon.png"))); // NOI18N
         btn_en.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_enActionPerformed(evt);
@@ -408,6 +408,6 @@ public class MainFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("password.png")));        
+       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("password.png")));        
     }
 }
