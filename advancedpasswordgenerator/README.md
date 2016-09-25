@@ -11,7 +11,10 @@ Seleccionando entre un rango de opciones.
 Entre las mismas, pueden incluir letras minúsculas, letras mayúsculas, símbolos o números.
 
 (c) 2016 Martín Javier Del Percio
+
 <martinjavierd@gmail.com>
+
 Buenos Aires, Argentina
+
 GNU General Public License, version 3 (GPL-3.0)
 
