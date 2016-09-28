@@ -55,6 +55,8 @@ public class MainFrame extends javax.swing.JFrame {
         chkboxTodo = new javax.swing.JCheckBox();
         btn_sp = new javax.swing.JButton();
         btn_en = new javax.swing.JButton();
+        btn_ger = new javax.swing.JButton();
+        btn_fran = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Generador Avanzado De Contraseñas");
@@ -146,7 +148,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(chkboxTodo)
                     .addComponent(chkboxNume)
                     .addComponent(chkboxSimb))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         panelGCLayout.setVerticalGroup(
             panelGCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,6 +187,26 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        btn_ger.setIcon(new javax.swing.ImageIcon(getClass().getResource("/advancedpasswordgenerator/Germany_icon.png"))); // NOI18N
+        btn_ger.setLabel("");
+        btn_ger.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btn_ger.setMaximumSize(new java.awt.Dimension(38, 38));
+        btn_ger.setMinimumSize(new java.awt.Dimension(38, 38));
+        btn_ger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_gerActionPerformed(evt);
+            }
+        });
+
+        btn_fran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/advancedpasswordgenerator/France_icon.png"))); // NOI18N
+        btn_fran.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btn_fran.setPreferredSize(new java.awt.Dimension(40, 35));
+        btn_fran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_franActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -201,8 +223,12 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(panelLong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_fran, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_ger, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_sp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_en, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
         );
@@ -211,13 +237,16 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_sp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_en, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_sp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_en, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_ger, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_fran, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelGC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelLong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(btnGenerar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,6 +254,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(btnCopiar)
                 .addGap(20, 20, 20))
         );
+
+        btn_ger.getAccessibleContext().setAccessibleName("");
+        btn_fran.getAccessibleContext().setAccessibleName("");
 
         setSize(new java.awt.Dimension(973, 402));
         setLocationRelativeTo(null);
@@ -325,7 +357,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void btn_spActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_spActionPerformed
         
         chkboxTodo.setText("Seleccionar Todo");        
-        panelGC.setBorder(BorderFactory.createTitledBorder("Grupo de Caracteres"));        
         chkboxMayu.setText("Letras Mayúsculas");
         chkboxMinu.setText("Letras Minúsculas");
         chkboxSimb.setText("Símbolos");
@@ -354,6 +385,38 @@ public class MainFrame extends javax.swing.JFrame {
         panelGC.setBorder(BorderFactory.createTitledBorder("Character Set"));
         
     }//GEN-LAST:event_btn_enActionPerformed
+
+    private void btn_franActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_franActionPerformed
+
+        chkboxTodo.setText("Tout Sélectionner");
+        chkboxMayu.setText("Lettres Majuscules");
+        chkboxMinu.setText("Lettres Minuscules");
+        chkboxSimb.setText("Symboles");
+        chkboxNume.setText("Nombres");
+        btnGenerar.setText("Générer");
+        txtResultado.setText("(vide)");
+        btnCopiar.setText("Copier Le Mot De Passe");
+        this.setTitle("Générateur De Mot De Passe Avancé");
+        panelLong.setBorder(BorderFactory.createTitledBorder("Longueur"));
+        panelGC.setBorder(BorderFactory.createTitledBorder("Jeu de Caractères"));
+        
+    }//GEN-LAST:event_btn_franActionPerformed
+
+    private void btn_gerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gerActionPerformed
+        
+        chkboxTodo.setText("Alles Auswählen");
+        chkboxMayu.setText("Großbuchstaben");
+        chkboxMinu.setText("Kleinbuchstaben");
+        chkboxSimb.setText("Symbole");
+        chkboxNume.setText("Nummern");
+        btnGenerar.setText("GENERIEREN");
+        txtResultado.setText("(leer)");
+        btnCopiar.setText("Kopieren Sie Das Kennwort Ein");
+        this.setTitle("Erweitert Kennwort Generator");
+        panelLong.setBorder(BorderFactory.createTitledBorder("Länge"));
+        panelGC.setBorder(BorderFactory.createTitledBorder("Zeichensatz"));
+        
+    }//GEN-LAST:event_btn_gerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,6 +458,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnCopiar;
     private javax.swing.JButton btnGenerar;
     private javax.swing.JButton btn_en;
+    private javax.swing.JButton btn_fran;
+    private javax.swing.JButton btn_ger;
     private javax.swing.JButton btn_sp;
     private javax.swing.JCheckBox chkboxMayu;
     private javax.swing.JCheckBox chkboxMinu;
